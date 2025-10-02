@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التقرير التحليلي المتقدم للمبيعات</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>التقرير التحليلي المتقدم للمبيعات</h1>
+            <p class="period">الفترة: يوليو - سبتمبر 2025</p>
+        </header>
+
+        <section class="summary">
+            <h2>📊 الملخص التنفيذي</h2>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <h3>إجمالي مبيعات فرع سموحة</h3>
+                    <div class="metric-value">1,727,544 جنيه</div>
+                    <div class="metric-note">يتفوق بنسبة 61% على فرع فؤاد</div>
+                </div>
+                <div class="summary-card">
+                    <h3>إجمالي مبيعات فرع فؤاد</h3>
+                    <div class="metric-value">1,073,098 جنيه</div>
+                    <div class="metric-note">نمو مطلوب لتحقيق التوازن</div>
+                </div>
+                <div class="summary-card">
+                    <h3>إجمالي المبيعات</h3>
+                    <div class="metric-value">2,800,642 جنيه</div>
+                    <div class="metric-note">في الأشهر الثلاثة</div>
+                </div>
+            </div>
+            <p class="summary-insight">
+                يُظهر التحليل المُحدث تفوق <strong>فرع سموحة</strong> بشكل واضح في إجمالي المبيعات بنسبة 61%، مع هيمنة خدمات الدليفري في كلا الفرعين. قسم الـ <strong>JARS</strong> يقود المبيعات في سموحة، بينما قسم الـ <strong>Offer</strong> يتصدر في فؤاد، مما يشير إلى اختلاف في استراتيجيات التسعير والعروض بين الفرعين.
+            </p>
+        </section>
+
+        <section class="charts-section">
+            <h2>📈 الرسوم البيانية التفاعلية</h2>
+            
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>مقارنة إجمالي المبيعات</h3>
+                    <div style="position: relative; height: 400px;">
+                        <canvas id="totalSalesChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>الاتجاهات الشهرية</h3>
+                    <div style="position: relative; height: 400px;">
+                        <canvas id="monthlyTrendChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>توزيع نوع الخدمة</h3>
+                    <div style="position: relative; height: 400px;">
+                        <canvas id="serviceBreakdownChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>مقارنة الأقسام الرئيسية</h3>
+                    <div style="position: relative; height: 400px;">
+                        <canvas id="categoriesChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>أداء المنتجات المشتركة</h3>
+                    <div style="position: relative; height: 400px;">
+                        <canvas id="keyProductsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>التغيرات الموسمية</h3>
+                    <div style="position: relative; height: 400px;">
+                        <canvas id="seasonalChangesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analysis-section">
+            <h2>📉📈 التحليل التفصيلي للمنتجات</h2>
+            
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <h3>المنتجات المتراجعة - فرع فؤاد</h3>
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th>المنتج</th>
+                                <th>مبيعات أغسطس</th>
+                                <th>مبيعات سبتمبر</th>
+                                <th>التغيير</th>
+                                <th>النسبة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dessert + Coffee</td>
+                                <td>56,333</td>
+                                <td>45,816</td>
+                                <td class="decline">-10,517</td>
+                                <td class="decline">-18.7%</td>
+                            </tr>
+                            <tr>
+                                <td>Nutella Molten Cake</td>
+                                <td>30,686</td>
+                                <td>27,129</td>
+                                <td class="decline">-3,557</td>
+                                <td class="decline">-11.6%</td>
+                            </tr>
+                            <tr>
+                                <td>Nutella Cake</td>
+                                <td>7,388</td>
+                                <td>3,964</td>
+                                <td class="decline">-3,424</td>
+                                <td class="decline">-46.3%</td>
+                            </tr>
+                            <tr>
+                                <td>Cheese Cake Jar</td>
+                                <td>10,140</td>
+                                <td>8,199</td>
+                                <td class="decline">-1,941</td>
+                                <td class="decline">-19.1%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="analysis-card">
+                    <h3>المنتجات المتراجعة - فرع سموحة</h3>
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th>المنتج</th>
+                                <th>مبيعات أغسطس</th>
+                                <th>مبيعات سبتمبر</th>
+                                <th>التغيير</th>
+                                <th>النسبة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dessert + Coffee</td>
+                                <td>64,149</td>
+                                <td>45,210</td>
+                                <td class="decline">-18,939</td>
+                                <td class="decline">-29.5%</td>
+                            </tr>
+                            <tr>
+                                <td>Milka Crepe</td>
+                                <td>3,860</td>
+                                <td>1,483</td>
+                                <td class="decline">-2,377</td>
+                                <td class="decline">-61.6%</td>
+                            </tr>
+                            <tr>
+                                <td>Crepes Staff</td>
+                                <td>2,880</td>
+                                <td>660</td>
+                                <td class="decline">-2,220</td>
+                                <td class="decline">-77.1%</td>
+                            </tr>
+                            <tr>
+                                <td>Nutella Shake</td>
+                                <td>5,480</td>
+                                <td>3,817</td>
+                                <td class="decline">-1,663</td>
+                                <td class="decline">-30.3%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="analysis-card">
+                    <h3>المنتجات الصاعدة - فرع فؤاد</h3>
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th>المنتج</th>
+                                <th>مبيعات أغسطس</th>
+                                <th>مبيعات سبتمبر</th>
+                                <th>التغيير</th>
+                                <th>النسبة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Strawberry Mini Cake</td>
+                                <td>1,831</td>
+                                <td>3,680</td>
+                                <td class="increase">+1,849</td>
+                                <td class="increase">+101.0%</td>
+                            </tr>
+                            <tr>
+                                <td>Four Season Cake</td>
+                                <td>5,541</td>
+                                <td>7,222</td>
+                                <td class="increase">+1,681</td>
+                                <td class="increase">+30.3%</td>
+                            </tr>
+                            <tr>
+                                <td>Kinder Jar</td>
+                                <td>6,352</td>
+                                <td>7,819</td>
+                                <td class="increase">+1,467</td>
+                                <td class="increase">+23.1%</td>
+                            </tr>
+                            <tr>
+                                <td>Nutella Turkish Large</td>
+                                <td>3,013</td>
+                                <td>4,207</td>
+                                <td class="increase">+1,194</td>
+                                <td class="increase">+39.6%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="analysis-card">
+                    <h3>المنتجات الصاعدة - فرع سموحة</h3>
+                    <table class="products-table">
+                        <thead>
+                            <tr>
+                                <th>المنتج</th>
+                                <th>مبيعات أغسطس</th>
+                                <th>مبيعات سبتمبر</th>
+                                <th>التغيير</th>
+                                <th>النسبة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mini Nutella Jar</td>
+                                <td>12,710</td>
+                                <td>20,019</td>
+                                <td class="increase">+7,309</td>
+                                <td class="increase">+57.5%</td>
+                            </tr>
+                            <tr>
+                                <td>Kinder Mini Cake</td>
+                                <td>5,640</td>
+                                <td>9,451</td>
+                                <td class="increase">+3,811</td>
+                                <td class="increase">+67.6%</td>
+                            </tr>
+                            <tr>
+                                <td>Red Velvet Mini Cake</td>
+                                <td>4,974</td>
+                                <td>8,459</td>
+                                <td class="increase">+3,485</td>
+                                <td class="increase">+70.1%</td>
+                            </tr>
+                            <tr>
+                                <td>Nutella Mini Cake</td>
+                                <td>6,827</td>
+                                <td>9,596</td>
+                                <td class="increase">+2,769</td>
+                                <td class="increase">+40.6%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="recommendations">
+            <h2>💡 التوصيات الاستراتيجية</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card">
+                    <h3>🎯 تحسين التوازن بين الفرعين</h3>
+                    <p>فرع سموحة يتفوق بنسبة 61% على فرع فؤاد. يجب دراسة عوامل النجاح في سموحة وتطبيقها في فؤاد، مع التركيز على تحسين استراتيجية العروض والتسويق.</p>
+                </div>
+                
+                <div class="recommendation-card">
+                    <h3>📈 استثمار منتجات Mini Cake</h3>
+                    <p>منتجات Mini Cake تحقق نموًا استثنائيًا في سموحة (57%-70%). يُنصح بتكثيف التسويق لهذه الفئة في فؤاد وتوسيع التشكيلة.</p>
+                </div>
+                
+                <div class="recommendation-card">
+                    <h3>⚠️ معالجة تراجع Dessert + Coffee</h3>
+                    <p>تراجع بنسبة 18.7% في فؤاد و29.5% في سموحة. يجب مراجعة الجودة والتسعير وإعادة تصميم العرض لاستعادة الجاذبية.</p>
+                </div>
+                
+                <div class="recommendation-card">
+                    <h3>🚀 تعزيز خدمة الدليفري</h3>
+                    <p>خدمة الدليفري تهيمن على المبيعات (68% من الإجمالي). يجب الاستثمار في تحسين سرعة التوصيل وتوسيع نطاق التغطية.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
